@@ -7,7 +7,8 @@ class LrsController < ApplicationController
    def index
      @payvoucher = Payvoucher.all
      if params[:lrno]
-     @lr = Lr.search(params[:lrno],params[:company])
+         lrs =Lr.arel_table
+         @lr = Lr.where(lrs[:lrno].matches(params[:lrno]).and(lrs[:party].matches("%#{params[:company]}%")))
    else
      @lr = Lr.paginate(:page => params[:page], :per_page => 30, :order => 'lrno ASC')
    end

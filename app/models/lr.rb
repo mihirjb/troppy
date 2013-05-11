@@ -25,12 +25,7 @@ class Lr < ActiveRecord::Base
   
   validates_uniqueness_of :lrno, scope: [:party]
   
-  def self.search(lrno,company)
-    if lrno
-      find(:all, :conditions => ['lower(party) LIKE lower(?)', "%#{params[:company].downcase}%"])
-    else
-      find(:all)
-    end
-  end
+ 
+ 
   
 end
