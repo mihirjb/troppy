@@ -23,9 +23,9 @@ class PayvouchersController < ApplicationController
      @totalamnt = params[:payvoucher][:balpaid].to_i + @lr.advance.to_i
      @c = Payvoucher.new(params[:payvoucher].merge(:lr_id => "#{@lr.id}", :lrno=> "#{@lr.lrno}", :party => "#{@lr.party}", :creation_location => "#{current_user.location}", :totalamnt => @totalamnt ))
      if @c.save
-     redirect_to "/payvouchers/" , :notice => "Success Policy created !"
+     redirect_to "/payvouchers/" , :notice => "Success Payvoucher created !"
      else
-     redirect_to "/payvouchers/new?id=#{@lr.id}" , :notice => "Oops policy creation failed"  
+     redirect_to "/payvouchers/new?id=#{@lr.id}" , :notice => "Oops Payvoucher creation failed"  
      end
 
    end
