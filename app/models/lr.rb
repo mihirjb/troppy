@@ -17,7 +17,7 @@
 class Lr < ActiveRecord::Base
   attr_accessible :advance, :loadweight, :lrno, :party, :truckno, :user_id,:creation_location
   
-  validates :name, :presence => true
+  validates :lrno, :presence => true
   validates :party, :presence => true
   validates :truckno, :presence => true
   validates :loadweight, :presence => true
