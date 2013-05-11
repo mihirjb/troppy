@@ -16,7 +16,7 @@
 #
 
 class Payvoucher < ActiveRecord::Base
-  attr_accessible :balpaid, :paiddate, :payee, :totalamnt,:party, :lr_id, :lrno,:creation_location
+  attr_accessible :balpaid, :paiddate, :payee, :totalamnt,:party, :lr_id, :lrno,:creation_location, :unloadingweight
   
   belongs_to :lr
   
