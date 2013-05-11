@@ -1,0 +1,2 @@
+module LrsHelper
+end

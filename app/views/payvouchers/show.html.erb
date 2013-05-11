@@ -1,0 +1,44 @@
+<% if @payvoucher.blank? %>
+	<h1>No such payvoucher found</h1>
+	
+	<% else %>
+	
+	<div>
+		<table class="table table-striped table-bordered table-hover">
+			<thead>
+				<tr>
+				<th>Balance Paid</th>
+				<th>Total Ammount</th>
+				<th>Payee</th>
+				<th>Paid Date</th>
+				<th>Lr no</th>
+				<th>Party</th>
+				<th>Paid at</th>
+				<%	if can? :update, Payvoucher %>
+				<th>Actions</th>
+				<% end %>
+
+				</tr>
+			
+			</thead>
+			
+				<tr>
+							<td><%= @payvoucher.balpaid %></td>
+							<td><%= @payvoucher.totalamnt %></td>	
+							<td><%= @payvoucher.payee %></td>
+							<td><%= @payvoucher.created_at.to_date.strftime('%d-%m-%Y') %></td>
+							<td><%= @payvoucher.lrno %></td>
+							<td><%= @payvoucher.party %></td>
+							<td><%= @payvoucher.creation_location %></td>
+							
+						<%	if can? :update, Payvoucher %>
+							<td><%= link_to "Edit", "/payvouchers/#{@payvoucher.id}/edit" %>/<% end %><%	if can? :destroy, Payvoucher %><%= link_to "Delete", "/payvouchers/#{@payvoucher.id}", :method => 'DELETE' %></td>
+							<% end %>
+
+
+						</tr>
+						</table>
+			
+	</div>
+	
+	<% end %>

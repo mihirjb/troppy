@@ -1,0 +1,21 @@
+<%= form_for @payvoucher, :html => { :multipart => true } do |f| -%>
+<div class="field">
+	<%= f.label :balpaid, "Balance paid" %>
+	<%= f.text_field :balpaid %>
+</div>  
+
+<div class="field">
+	<%= f.label :totalamnt, "Total Ammount" %>
+	<%= f.text_field :totalamnt %>
+</div>
+
+
+<div class="field">
+	<%= f.label :payee, "Paid to" %>
+	<%= f.text_field :payee %>
+</div>
+
+<div class="field">
+<%= f.submit "Update", :disable_with => 'Updating...' %>
+</div>
+<% end -%>

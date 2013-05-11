@@ -1,0 +1,33 @@
+<%= form_for @lr, :html => { :multipart => true } do |f| -%>
+<div class="field">
+	<%= f.label :lrno, "Lr Number" %>
+	<%= f.text_field :lrno %>
+</div>  
+
+<div class="field">
+	<%= f.label :party, "Generated for" %>
+	<%= f.text_field :party %>
+</div>
+
+
+<div class="field">
+	<%= f.label :truckno, "Truck number" %>
+	<%= f.text_field :truckno %>
+</div>
+
+<div class="field">
+	<%= f.label :loadweight, "Loading Weight" %>
+	<%= f.text_field :loadweight %>
+</div>
+
+
+<div class="field">
+	<%= f.label :advance, "Advance Amount" %>
+	<%= f.text_field :advance %>
+</div>
+
+
+<div class="field">
+<%= f.submit "Add", :disable_with => 'Adding...' %>
+</div>
+<% end -%>

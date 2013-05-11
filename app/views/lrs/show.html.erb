@@ -1,0 +1,44 @@
+<% if @lr.blank? %>
+	<h1>No such Lr found</h1>
+	
+	<% else %>
+	
+	<div>
+		<table class="table table-striped table-bordered table-hover">
+			<thead>
+				<tr>
+				<th>Lr number</th>
+				<th>Party</th>
+				<th>Truck number</th>
+				<th>Created Date</th>
+				<th>Load Weight</th>
+				<th>Advance</th>
+				<th>Initiated at</th>
+				<%	if can? :update, Lr %>
+				<th>Actions</th>
+				<% end %>
+
+				</tr>
+			
+			</thead>
+			
+				<tr>
+							<td><%= @lr.lrno %></td>
+							<td><%= @lr.party %></td>	
+							<td><%= @lr.truckno %></td>
+							<td><%= @lr.created_at.to_date.strftime('%d-%m-%Y') %></td>
+							<td><%= @lr.loadweight %></td>
+							<td><%= @lr.advance %></td>
+							<td><%= @lr.creation_location %></td>
+							
+						<%	if can? :update, Lr %>
+							<td><%= link_to "Edit", "/lrs/#{@lr.id}/edit" %>/<% end %><%	if can? :destroy, Lr %><%= link_to "Delete", "/lrs/#{@lr.id}", :method => 'DELETE' %></td>
+							<% end %>
+
+
+						</tr>
+						</table>
+	
+	</div>
+	
+	<% end %>
