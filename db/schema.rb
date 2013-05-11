@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130511065644) do
+ActiveRecord::Schema.define(:version => 20130511125547) do
 
   create_table "lrs", :force => true do |t|
     t.integer  "lrno"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(:version => 20130511065644) do
     t.integer  "lr_id"
     t.integer  "lrno"
     t.string   "party"
+    t.string   "unloadingweight"
   end
 
   create_table "roles", :force => true do |t|
