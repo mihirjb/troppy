@@ -18,6 +18,12 @@
 class Payvoucher < ActiveRecord::Base
   attr_accessible :balpaid, :paiddate, :payee, :totalamnt,:party, :lr_id, :lrno,:creation_location, :unloadingweight
   
+  validates :balpaid, :presence => true, :message => 'Balance paid cannot be blank, Payvoucher not saved'
+  validates :payee, :presence => true, :message => 'Payee cannot be blank, Payvoucher not saved'
+  validates :unloadingweight, :presence => true, :message => 'Unloading weight cannot be blank, Payvoucher not saved'
+  
+  
+  
   belongs_to :lr
   
 end

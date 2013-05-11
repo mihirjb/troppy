@@ -17,6 +17,11 @@
 class Lr < ActiveRecord::Base
   attr_accessible :advance, :loadweight, :lrno, :party, :truckno, :user_id,:creation_location
   
+  validates :name, :presence => true, :message => 'Name cannot be blank, Lr not saved'
+  validates :party, :presence => true, :message => 'Party cannot be blank, Lr not saved'
+  validates :truckno, :presence => true, :message => 'Truck number cannot be blank, Lr not saved'
+  validates :loadweight, :presence => true, :message => 'Loading Weight cannot be blank, Lr not saved'
+  validates :advance, ::presence => true, :message => 'Advance cannot be blank. Put 0 if no Advance, Lr not saved'
   
   
   belongs_to :user
