@@ -25,4 +25,12 @@ class Lr < ActiveRecord::Base
   
   validates_uniqueness_of :lrno, scope: [:party]
   
+  def self.search(lrno,company)
+    if lrno
+      find(:all, :conditions => ['lrno LIKE ? AND party LIKE ?',lrno, "%#{company}%"])
+    else
+      find(:all)
+    end
+  end
+  
 end

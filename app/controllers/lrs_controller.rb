@@ -5,7 +5,11 @@ class LrsController < ApplicationController
   before_filter :authenticate_user!
   
    def index
+     if params[:lrno]
+     @lr = Lr.search(params[:lrno],params[:company])
+   else
      @lr = Lr.paginate(:page => params[:page], :per_page => 30, :order => 'lrno ASC')
+   end
      @payvoucher = Payvoucher.all
    end
 
