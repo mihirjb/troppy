@@ -27,7 +27,7 @@ class Lr < ActiveRecord::Base
   
   def self.search(lrno,company)
     if lrno
-      find(:all, :conditions => ['lrno ILIKE ? AND party ILIKE ?',lrno, "%#{company}%"])
+      find(:all, :conditions => ['lrno ILIKE ? AND LOWER(party) LIKE ?',lrno, "%#{params[:company].downcase}%"])
     else
       find(:all)
     end
