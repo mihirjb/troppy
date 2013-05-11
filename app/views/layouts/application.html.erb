@@ -20,7 +20,7 @@
 				<li><%= link_to "Create new User", "/users/new" %></li>
 				<% end %>
 			
-					<li><%= link_to "Signed in as #{current_user.username.camelize}", root_path %></li>
+					<li><%= link_to "Signed in as #{current_user.email}", root_path %></li>
 			<li></li>  
 			<li style= "float:right"><%= link_to "Sign out", destroy_user_session_path, :method => 'delete' %></li>
 			<% else %>
