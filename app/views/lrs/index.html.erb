@@ -42,7 +42,7 @@
 									<% if @pay = Payvoucher.find_by_lr_id(t.id) %>		
 									<td>Paid <%	if can? :read, Payvoucher %> - <%= link_to "View voucher" , "/payvouchers/#{@pay.id}"%><% end %></td>
 							<% else %>
-							<td>Pending<%	if can? :create, Payvoucher %><%= link_to "Create voucher" , "/payvouchers/new?id=#{t.id}"%> <% end %></td>
+							<td>Pending<%	if can? :create, Payvoucher %> - <%= link_to "Create voucher" , "/payvouchers/new?id=#{t.id}"%> <% end %></td>
 							<% end %>
 					
 							
