@@ -1,7 +1,45 @@
+<div>
+	<table class="table table-striped table-bordered table-hover">
+		<thead>
+			<tr>
+			<th>Lr number</th>
+			<th>Party</th>
+			<th>Truck number</th>
+			<th>Created Date</th>
+			<th>Load Weight</th>
+			<th>Advance</th>
+			<th>Initiated at</th>
+		
+			</tr>
+		
+		</thead>
+		
+			<tr>
+						<td><%= @lr.lrno %></td>
+						<td><%= @lr.party %></td>	
+						<td><%= @lr.truckno %></td>
+						<td><%= @lr.created_at.to_date.strftime('%d-%m-%Y') %></td>
+						<td><%= @lr.loadweight %></td>
+						<td><%= @lr.advance %></td>
+						<td><%= @lr.creation_location %></td>
+					
+
+
+					</tr>
+					</table>
+
+</div>
+
+
+
 <%= form_for @payvoucher, :html => { :multipart => true } do |f| -%>
 <div class="field">
 	<%= f.label :balpaid, "Balance paid" %>
 	<%= f.text_field :balpaid %>
+</div>  
+<div class="field">
+	<%= f.label :unlaodingweight, "Unloading weight" %>
+	<%= f.text_field :unloadingweight %>
 </div>  
 
 
