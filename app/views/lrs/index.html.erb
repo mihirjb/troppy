@@ -2,7 +2,7 @@
 
 <h1>All the lrs</h1>
 
-<%= form_tag lrs_path, :method => 'get' do %>
+<%= form_tag '/lrs', :method => 'get' do %>
   <p>
 	<%= text_field_tag :lrno, "Lr number" %>
     <%= text_field_tag :company, "Name of party" %>

@@ -7,7 +7,6 @@ root :to => 'lrs#index'
   resources :lrs
   resources :payvouchers
   resources :roles
- match '/lrs' => 'lrs#index', :as =>:lrs_path
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
