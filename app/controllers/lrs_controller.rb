@@ -8,7 +8,7 @@ class LrsController < ApplicationController
      @payvoucher = Payvoucher.all
      if params[:lrno]
          lrs=Lr.arel_table
-@lr = Lr.find(:all, :conditions => ['party ILIKE ? ', "#{params[:company]}"])
+@lr = Lr.find(:all, :conditions => ['party ILIKE ? AND lrno ILIKE ? ', "#{params[:company]}", "#{params[:lrno]}"])
    
     #    @lr = Lr.where(lrs[:lrno].matches("%#{params[:lrno]}%").and(lrs[:party].matches("%#{params[:company]}%")))
    else
