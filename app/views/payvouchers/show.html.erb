@@ -1,7 +1,9 @@
+
 <% if @payvoucher.blank? %>
 	<h1>No such payvoucher found</h1>
 	
 	<% else %>
+
 	
 	<div>
 		<table class="table table-striped table-bordered table-hover">
@@ -14,6 +16,7 @@
 				<th>Lr no</th>
 				<th>Party</th>
 				<th>Paid at</th>
+				<th>Unloading Weight</th>
 				<%	if can? :update, Payvoucher %>
 				<th>Actions</th>
 				<% end %>
@@ -30,6 +33,7 @@
 							<td><%= @payvoucher.lrno %></td>
 							<td><%= @payvoucher.party %></td>
 							<td><%= @payvoucher.creation_location %></td>
+							<td><%= @payvoucher.unloadingweight %></td>
 							
 						<%	if can? :update, Payvoucher %>
 							<td><%= link_to "Edit", "/payvouchers/#{@payvoucher.id}/edit" %>/<% end %><%	if can? :destroy, Payvoucher %><%= link_to "Delete", "/payvouchers/#{@payvoucher.id}", :method => 'DELETE' %></td>
