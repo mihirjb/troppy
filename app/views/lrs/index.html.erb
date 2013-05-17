@@ -15,10 +15,8 @@
 <% else %>
 <% if !params[:lrno] %>
 <%= will_paginate @lr %>
-
-<% elsif @error_message.size > 0%>
-<h3 class="alert alert-error"><%= @error_message %></h3>
 <% else %>
+
 <h3>Showing search results for "<i>Lr number <%= params[:lrno] %> and Party <%= params[:company] %></i>"</h3><br/>
 
 <% end %>
