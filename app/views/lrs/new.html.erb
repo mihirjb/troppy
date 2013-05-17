@@ -1,4 +1,17 @@
 <%= form_for @lr, :html => { :multipart => true } do |f| -%>
+
+<% if @lr.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@lr.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+    <ul>
+    <% @lr.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <div class="field">
 	<%= f.label :lrno, "Lr Number" %>
 	<%= f.text_field :lrno %>
@@ -8,7 +21,6 @@
 	<%= f.label :party, "Generated for" %>
 	  <%= f.select :party, [['Reliance','Reliance'],['Essar','Essar']] %>
 </div>
-
 
 <div class="field">
 	<%= f.label :truckno, "Truck number" %>

@@ -48,7 +48,7 @@
 						<td><%= t.truckno %></td>	
 						<td><%= t.loadweight %></td>
 						<td><%= t.advance %></td>	
-						<td><%= t.created_at.to_date.strftime('%d-%m-%Y') %></td>
+						<td><%= t.created_at.to_date.strftime('%d-%m-%Y') %></td><!-- Creates the date and displays in Indian format -->
 					<%	if can? :update, @lr %>
 						<td><%= link_to "Edit", "/lrs/#{t.id}/edit" %>/<% end %><%	if can? :destroy, @lr %><%= link_to "Delete", "/lrs/#{t.id}", :method => 'DELETE' %></td>
 						<% end %>
