@@ -7,8 +7,14 @@ class LrsController < ApplicationController
    def index
      @payvoucher = Payvoucher.all
      if params[:lrno]
+       
+       if params[:lrno].blank? || params[:company].blank?
+         @lr = Lr.paginate(:page => params[:page], :per_page => 30, :order => 'lrno ASC')
+         @error_message = "Either of the fields cannot be blank, please input correct values and try again"
+       else
          lrs=Lr.arel_table
 @lr = Lr.find(:all, :conditions => ['party ILIKE ? AND lrno = ?', "%#{params[:company]}%",params[:lrno]]) #this works on heroku
+end
    
     #    @lr = Lr.where(lrs[:lrno].matches("%#{params[:lrno]}%").and(lrs[:party].matches("%#{params[:company]}%")))
    else
