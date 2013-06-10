@@ -5,5 +5,6 @@ class AddOtherFieldsToPayvoucher < ActiveRecord::Migration
     add_column :payvouchers, :lrno, :integer
     add_column :payvouchers, :party, :string
     add_column :payvouchers, :unloadingweight, :string
+    
   end
 end

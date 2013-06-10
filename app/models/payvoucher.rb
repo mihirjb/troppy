@@ -21,6 +21,7 @@ class Payvoucher < ActiveRecord::Base
   validates :balpaid, :presence => true
   validates :payee, :presence => true
   validates :unloadingweight, :presence => true
+  validates :lr_id, :uniqueness => true
   
   
   

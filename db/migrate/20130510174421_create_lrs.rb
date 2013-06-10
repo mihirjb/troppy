@@ -6,6 +6,7 @@ class CreateLrs < ActiveRecord::Migration
       t.string :truckno
       t.string :loadweight
       t.integer :advance
+      t.references :user_id, :user
 
       t.timestamps
     end

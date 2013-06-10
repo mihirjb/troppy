@@ -25,10 +25,11 @@ class Lr < ActiveRecord::Base
   
   
   belongs_to :user
-  has_one :voucher, :dependent => :destroy
+  has_one :payvoucher # dependent destroy implemented via a hack in the LR controller.
+
   
   
-  validates_uniqueness_of :lrno, scope: [:party]
+  validates_uniqueness_of :lrno, scope: [:party] # it will not create a duplicate Lr for the same Party - say only one            Lr for Reliance
   
  
  

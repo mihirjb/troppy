@@ -30,7 +30,7 @@ class LrsController < ApplicationController
    end
 
    def show
-     if Lr.find(params[:id])
+   if Lr.find(params[:id]).present?
        @lr = Lr.find(params[:id])
      else
        @lr = ""
@@ -59,7 +59,9 @@ class LrsController < ApplicationController
      end
 
      def destroy
+       @lr =  Lr.find(params[:id])
        Lr.find(params[:id]).delete
+       Payvoucher.find_by_lr_id(@lr.id).delete
        redirect_to root_path, :notice => "Success, Lr  Deleted"
      end
  
