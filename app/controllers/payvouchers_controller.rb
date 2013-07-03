@@ -25,7 +25,7 @@ class PayvouchersController < ApplicationController
      if @c.save
      redirect_to "/payvouchers/" , :notice => "Success Payvoucher created !"
      else
-     redirect_to "/payvouchers/new?id=#{@lr.id}" , :notice => "Oops Payvoucher creation failed"  
+redirect_to "/payvouchers/new?id=#{@lr.id}" , :notice => "Oops Payvoucher creation failed"  
      end
 
    end
