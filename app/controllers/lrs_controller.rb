@@ -61,7 +61,7 @@ class LrsController < ApplicationController
      def destroy
        @lr =  Lr.find(params[:id])
        Lr.find(params[:id]).delete
-       Payvoucher.find_by_lr_id(@lr.id).delete
+       Payvoucher.find_by_lr_id(@lr.id).delete if Payvoucher.find_by_lr_id(@lr.id)
        redirect_to root_path, :notice => "Success, Lr  Deleted"
      end
  
